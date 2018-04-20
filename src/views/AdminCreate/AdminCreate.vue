@@ -5,15 +5,18 @@
   </el-header>
   <el-main>
     <Tab />
+    <Page />
   </el-main>
 </el-container>
 </template>
 <script>
 import Tab from '../../components/Tab.vue'
+import Page from '../../components/Page.vue'
 export default {
   name: 'adminCreate',
   components: {
-    Tab
+    Tab,
+    Page
   }
 }
 </script>

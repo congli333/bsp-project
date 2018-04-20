@@ -10,15 +10,17 @@
     type='selection'
     width="50">
   </el-table-column>
+  <el-table-column label='创意素材' width='100'>
+    <template slot-scope="scope">
+      <img :src='scope.row.imgUrl' />
+    </template>
+  </el-table-column>
   <el-table-column
     v-for='(item, ind) in columns'
     :key='ind'
     :prop='item.props'
     :label='item.name'
   >
-    <template v-if='item.props==="img"' slot-scope="scope">
-      <img :src='item.imgUrl' />
-    </template>
   </el-table-column>
   <el-table-column
     label="操作"
@@ -45,9 +47,6 @@ export default {
     return {
       columns: [
         {
-          props: 'img',
-          name: '创意素材'
-        }, {
           props: 'name',
           name: '创意ID'
         }, {
@@ -94,7 +93,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.el-table-column img{
+.el-table .cell img{
   width: 100px;
   height: auto;
 }
